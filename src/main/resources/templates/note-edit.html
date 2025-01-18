@@ -9,21 +9,21 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header bg-danger text-black">
+                <div class="card-header bg-danger text-white">
                     <h3 class="text-center">Edit Note</h3>
                 </div>
                 <div class="card-body">
                     <form th:action="@{/note/edit}" method="post">
-                        <input type="hidden" name="id" th:value="${note.id}">
+                        <input type="hidden" th:field="*{id}">
 
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" id="title" name="title" class="form-control" th:value="${note.title}" required>
+                            <input type="text" id="title" th:field="*{title}" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="content" class="form-label">Content</label>
-                            <textarea id="content" name="content" class="form-control" rows="5" th:text="${note.content}" required></textarea>
+                            <textarea id="content" th:field="*{content}" class="form-control" rows="5" required></textarea>
                         </div>
 
                         <div class="text-center">

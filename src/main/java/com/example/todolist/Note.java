@@ -1,24 +1,33 @@
 package com.example.todolist;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Note {
-    private long id;       // Ідентифікатор
-    private String title;  // Назва нотатки
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;        // Ідентифікатор
+    private String title;   // Назва нотатки
     private String content; // Контент нотатки
 
     public Note() {
     }
 
-    public Note(long id, String title, String content) {
+    public Note(Long id, String title, String content) {
         this.id = id;
         this.title = title;
         this.content = content;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
